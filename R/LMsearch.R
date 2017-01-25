@@ -4,11 +4,18 @@
 #' input
 #'
 #' @param x a character of a valid \code{InChiKey} or \code{Molecular Formula}
-#' @return a \code{data.frame} containing the following fields for each returned entry'
-#'     \itemize{
-#'         \item{}
-#'
-#'
+#' @return a \code{data.frame} containing the following fields for each returned entry
+#'     \describe{
+#'         \item{name}{Systematic name}
+#'         \item{id}{LIPID MAPS database id}
+#'         \item{mz}{Monoisotopic accurate mass}
+#'         \item{inchi}{InChi Code}
+#'         \item{inchi_key}{InChiKey}
+#'         \item{smiles}{Smiles}
+#'         \item{formula}{Molecular formula}
+#'         \item{core_class}
+#'         \item{main_class}
+#'         \item{sub_clss}
 #'     }
 #'
 #' @author Tom Wilson \email{tpw2@@aber.ac.uk}
