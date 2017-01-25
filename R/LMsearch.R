@@ -21,10 +21,9 @@
 LMsearch <- function(x)
   {
   RESTURL <- "http://www.lipidmaps.org/rest/compound"
-  x <- as.list(match.call())$x
-  print(x)
-  xx <- gsub("-","", x)
 
+  x <- as.list(match.call())$x
+  xx <- gsub("-","", x)
   xs <- strsplit(xx, "")
 
   if(all(grepl("^[[:upper:]]",xs[[1]]) == TRUE)){
@@ -32,13 +31,14 @@ LMsearch <- function(x)
       url_request <- paste0(RESTURL, "/inchi_key/", x, "/all/")
       optin <- "inchi_key"
   }else{
-      if(any(grepl("C|H|O", xs[[1]]) == TRUE)){
-          print("Molecular Formula Detected")
-          optin <- "formula"
-          url_request <- paste0(RESTURL, "/formula/", x, "/all/")
+      if(any(grepl("[[:alnum:]]",x)) == TRUE){
+        if(length(grep("C", xs[[1]])) == 1){
+           print("Molecular Formula Detected")
+           optin <- "formula"
+           url_request <- paste0(RESTURL, "/formula/", x, "/all/")
       }else{
           stop("Input is not a valid InChiKey or Molecular Formula", call. = FALSE)
-      }
+      }}
   }
 
   url_return <- RCurl::getURLContent(url_request)

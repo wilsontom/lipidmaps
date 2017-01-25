@@ -1,0 +1,11 @@
+language: r
+sudo: required
+warnings_are_errors: false
+- testthat
+- covr
+after_success:
+  - Rscript -e 'library(covr);codecov()'
+notifications:
+  email:
+  on_success: change
+  on_failure: change
