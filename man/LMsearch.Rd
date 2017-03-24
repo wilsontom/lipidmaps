@@ -19,9 +19,9 @@ a \code{data.frame} containing the following fields for each returned entry
         \item{inchi_key}{InChiKey}
         \item{smiles}{Smiles}
         \item{formula}{Molecular formula}
-        \item{core_class}
-        \item{main_class}
-        \item{sub_clss}
+        \item{core_class}{core}
+        \item{main_class}{main}
+        \item{sub_clss}{sub}
     }
 }
 \description{
