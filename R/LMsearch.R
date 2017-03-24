@@ -13,9 +13,9 @@
 #'         \item{inchi_key}{InChiKey}
 #'         \item{smiles}{Smiles}
 #'         \item{formula}{Molecular formula}
-#'         \item{core_class}{core}
-#'         \item{main_class}{main}
-#'         \item{sub_clss}{sub}
+#'         \item{core_class}{Core}
+#'         \item{main_class}{Main-class}
+#'         \item{sub_clss}{Sub-class}
 #'     }
 #'
 #' @author Tom Wilson \email{tpw2@@aber.ac.uk}
