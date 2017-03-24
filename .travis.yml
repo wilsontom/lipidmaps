@@ -1,11 +1,20 @@
 language: r
-sudo: required
 warnings_are_errors: false
-- testthat
-- covr
+sudo: required
+dist: trusty
+
+r:
+ - release
+ - devel
+
+r_packages:
+ - testthat
+ - covr
+
 after_success:
-  - Rscript -e 'library(covr);codecov()'
+ - Rscript -e 'library(covr); codecov()'
+
 notifications:
   email:
-  on_success: change
-  on_failure: change
+   on_success: change
+   on_failure: change
