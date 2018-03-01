@@ -1,17 +1,17 @@
 Package: lipidmaps
 Type: Package
-Title: R Interface to the LIPID MAPS RESTful API
+Title: LIPID MAPS API
 Version: 0.1.0
-Author: Tom Wilson <tpw2@aber.ac.uk>
-Maintainer: Tom Wilson <tpw2@aber.ac.uk>
-Description: Simple searching of the LIPID MAPS database using Molecular Formular or an InChiKey as an input.
+Authors@R: person("Tom", "Wilson", email = "tpw2@aber.ac.uk", role = c("aut", "cre"))
+Description: Minimal access to the LIPID MAPS REST Service (http://www.lipidmaps.org/data/lm_rest.php)
 Imports:
-  RCurl,
-  jsonlite
+    RCurl,
+    jsonlite
 Suggests:
     testthat
 License: GPL (>= 3)
 LazyData: TRUE
-RoxygenNote: 5.0.0
+RoxygenNote: 6.0.1
 URL: https://github.com/wilsontom/lipidmaps
 BugReports: https://github.com/wilsontom/lipidmaps/issues
+Roxygen: list(markdown = TRUE)
