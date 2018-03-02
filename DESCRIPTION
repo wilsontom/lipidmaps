@@ -4,9 +4,12 @@ Title: LIPID MAPS API
 Version: 0.1.0
 Authors@R: person("Tom", "Wilson", email = "tpw2@aber.ac.uk", role = c("aut", "cre"))
 Description: Minimal access to the LIPID MAPS REST Service (http://www.lipidmaps.org/data/lm_rest.php)
+Depends:
+    dplyr
 Imports:
-    RCurl,
-    jsonlite
+    httr,
+    tibble,
+    tidyr
 Suggests:
     testthat
 License: GPL (>= 3)
