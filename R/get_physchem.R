@@ -1,8 +1,8 @@
-#' Search LIPID MAPS
+#' Retrieve Physio-Chemical Properties
 #'
 #'
 #' @param type a character string indicating
-#' @param value
+#' @param value the value for the matching `type`
 #'
 #' @return a `tibble` containing the following fields for each returned entry
 #'  - __lm_id__
@@ -18,13 +18,15 @@
 #'  - __smr__
 #'  - __tpsa__
 #'  - __aromatic_rings__
+#'
 #' @export
 
 get_physchem <- function(type, value)
 {
   RESTURL <- 'http://www.lipidmaps.org/rest/compound'
 
-  url_request <-  paste0(RESTURL, '/', type, '/', value, '/physchem/')
+  url_request <-
+    paste0(RESTURL, '/', type, '/', value, '/physchem/')
 
   pc_res <- httr::GET(url_request) %>% httr::content(., 'parsed')
 
