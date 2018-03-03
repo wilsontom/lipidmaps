@@ -1,8 +1,9 @@
 #' Search LIPID MAPS
 #'
+#' Search the LIPID MAPS database
 #'
 #' @param type a character string indicating
-#' @param value
+#' @param value the value for the matching `type`
 #'
 #' @return a `tibble` containing the following fields for each returned entry
 #'        - __name__ Systematic name
@@ -18,6 +19,13 @@
 #'
 #'
 #' @export
+#' @examples
+#'
+#' search_lipidmaps('inchi_key', 'ZQPPMHVWECSIRJ-KTKRTIGZSA-N')
+#'
+#' search_lipidmaps('formula', 'C20H34O')
+#'
+#' search_lipidmaps('pubchem_cid', 445639)
 
 search_lipidmaps <- function(type, value)
 {
@@ -27,16 +35,14 @@ search_lipidmaps <- function(type, value)
 
   lm_res <- httr::GET(url_request) %>% httr::content(., 'parsed')
 
-  if(length(grep('Row', names(lm_res))) >= 1){
+  if (length(grep('Row', names(lm_res))) >= 1) {
     lm_parse <-
       purrr::map(lm_res, ~ {
         t(unlist(.)) %>% as_tibble()
       }) %>% bind_rows()
-  }else{
+  } else{
     lm_parse <- as_tibble(lm_res)
   }
 
-
   return(lm_parse)
-
 }
