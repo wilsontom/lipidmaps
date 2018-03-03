@@ -2,14 +2,14 @@
 % Please edit documentation in R/get_physchem.R
 \name{get_physchem}
 \alias{get_physchem}
-\title{Search LIPID MAPS}
+\title{Retrieve Physio-Chemical Properties}
 \usage{
 get_physchem(type, value)
 }
 \arguments{
 \item{type}{a character string indicating}
 
-\item{value}{}
+\item{value}{the value for the matching \code{type}}
 }
 \value{
 a \code{tibble} containing the following fields for each returned entry
@@ -30,5 +30,5 @@ a \code{tibble} containing the following fields for each returned entry
 }
 }
 \description{
-Search LIPID MAPS
+Retrieve Physio-Chemical Properties
 }

@@ -9,7 +9,7 @@ search_lipidmaps(type, value)
 \arguments{
 \item{type}{a character string indicating}
 
-\item{value}{}
+\item{value}{the value for the matching \code{type}}
 }
 \value{
 a \code{tibble} containing the following fields for each returned entry
@@ -25,5 +25,13 @@ a \code{tibble} containing the following fields for each returned entry
 - \strong{sub_class}
 }
 \description{
-Search LIPID MAPS
+Search the LIPID MAPS database
+}
+\examples{
+
+search_lipidmaps('inchi_key', 'ZQPPMHVWECSIRJ-KTKRTIGZSA-N')
+
+search_lipidmaps('formula', 'C20H34O')
+
+search_lipidmaps('pubchem_cid', 445639)
 }
